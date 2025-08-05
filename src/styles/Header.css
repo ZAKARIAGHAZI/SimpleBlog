@@ -1,0 +1,40 @@
+header {
+  background-color: white;
+  padding: 20px 40px;
+  max-height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.links-section ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem; /* fixed this */
+  margin: 0;
+  padding: 0;
+}
+
+.links-section ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links-section ul li a:hover {
+  color: #007bff;
+}
