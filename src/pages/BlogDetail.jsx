@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/BlogDetail.css";
+import herosection from "../assets/herosection.jpg"
 
 const BlogDetail = () => {
   const { state } = useLocation();
@@ -18,7 +19,7 @@ const BlogDetail = () => {
     <div className="blog-detail-container">
       <div className="blog-detail-card">
         <img
-          src={urlToImage || "https://via.placeholder.com/600x300"}
+          src={urlToImage || herosection }
           alt={title}
         />
 

@@ -15,7 +15,19 @@ const Blogs = () => {
       try {
         const res = await fetch(API_URL);
         const data = await res.json();
-        setArticles(data.articles);
+
+        const localBlogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
+
+        // Map local blogs to match API format
+        const formattedLocalBlogs = localBlogs.map((blog, i) => ({
+          ...blog,
+          urlToImage: blog.image,
+          description: blog.content,
+          publishedAt: blog.publishedAt || new Date().toISOString(),
+          isLocal: true, // flag for routing
+        }));
+
+        setArticles([...formattedLocalBlogs, ...data.articles]);
       } catch (err) {
         console.error("Error fetching articles:", err);
       }
@@ -32,10 +44,10 @@ const Blogs = () => {
   };
 
   return (
-    <section className="blogs-container">
+    <section className="blogs-container" id="Blogs">
       <h1>Blogs</h1>
       {articles.slice(0, visible).map((article, index) => (
-        <div id="blogs" className="blogs-card" key={index}>
+        <div className="blogs-card" key={index}>
           <div className="content">
             <div className="image-wrapper">
               <img
@@ -62,6 +74,7 @@ const Blogs = () => {
           </div>
         </div>
       ))}
+
       {visible < articles.length && (
         <button className="voir-plus-btn" onClick={handleLoadMore}>
           Voir plus
