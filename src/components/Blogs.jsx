@@ -32,10 +32,10 @@ const Blogs = () => {
   };
 
   return (
-    <div className="blogs-container">
+    <section className="blogs-container">
       <h1>Blogs</h1>
       {articles.slice(0, visible).map((article, index) => (
-        <section id="blogs" className="blogs-card" key={index}>
+        <div id="blogs" className="blogs-card" key={index}>
           <div className="content">
             <div className="image-wrapper">
               <img
@@ -60,14 +60,14 @@ const Blogs = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       ))}
       {visible < articles.length && (
         <button className="voir-plus-btn" onClick={handleLoadMore}>
           Voir plus
         </button>
       )}
-    </div>
+    </section>
   );
 };
 

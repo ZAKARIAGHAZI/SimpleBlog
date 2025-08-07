@@ -1,9 +1,10 @@
-import "./App.css";
 import { Routes, Route , useLocation} from "react-router-dom";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Blogs from "./components/Blogs";
 import BlogDetail from "./pages/BlogDetail";
+import AboutUs from "./components/AboutUs";
+import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,8 @@ function App() {
         <Route path="/" element={<Blogs />} />
         <Route path="/blog/:index" element={<BlogDetail />} />
       </Routes>
+      {isHome && <AboutUs />}
+      <Footer />
     </>
   );
 }

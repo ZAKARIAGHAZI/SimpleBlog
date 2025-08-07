@@ -28,7 +28,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#aboutus" onClick={() => setIsOpen(false)}>
+              <a href="#AboutUS" onClick={() => setIsOpen(false)}>
                 About Us
               </a>
             </li>
