@@ -1,7 +1,7 @@
 import "../styles/HeroSection.css";
 import heroSection from "../assets/heroSection.jpg";
 
-export const HeroSection = () => {
+const HeroSection = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -20,3 +20,6 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+
+export default HeroSection
