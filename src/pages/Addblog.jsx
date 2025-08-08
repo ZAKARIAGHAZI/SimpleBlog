@@ -31,22 +31,28 @@ const AddBlog = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+   e.preventDefault();
 
-    const existingBlogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
-    const newBlog = {
-      ...blog,
-      publishedAt: new Date().toISOString(),
-    };
+   try {
+     const existingBlogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
+     const newBlog = {
+       ...blog,
+       publishedAt: new Date().toISOString(),
+     };
 
-    localStorage.setItem(
-      "userBlogs",
-      JSON.stringify([...existingBlogs, newBlog])
-    );
-    navigate("/");
-  };
+     localStorage.setItem(
+       "userBlogs",
+       JSON.stringify([...existingBlogs, newBlog])
+     );
 
+     alert("✅ Blog added successfully!");
+     navigate("/");
+   } catch (error) {
+     console.error("Error adding blog:", error);
+     alert("❌ Failed to add blog. Please try again.");
+   }
+ };
   return (
     <div className="add-blog-form-container">
       <h2>Add New Blog</h2>
