@@ -64,7 +64,7 @@ npm install
 ### 3. Start the Development Server
 
 ```bash
-npm run dev   # If using Vite
+npm run dev 
 
 ```
 
