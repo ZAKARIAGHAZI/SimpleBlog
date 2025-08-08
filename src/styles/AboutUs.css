@@ -1,10 +1,12 @@
 .about-section {
   padding: 30px 40px;
 }
+
 .about-section h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 .about-container {
   display: flex;
   gap: 2rem;
@@ -42,11 +44,16 @@
   object-fit: cover;
 }
 
-/* Responsive */
+/* Tablet & below */
 @media (max-width: 768px) {
+  .about-section {
+    padding: 20px;
+  }
+
   .about-container {
     flex-direction: column-reverse;
     text-align: center;
+    padding: 15px;
   }
 
   .about-text h2 {
@@ -55,5 +62,33 @@
 
   .about-text p {
     font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-container {
+    padding: 10px;
+    gap: 1rem;
+  }
+
+  .about-image {
+    min-width: 100%;
+  }
+
+  .about-text {
+    min-width: 100%;
   }
 }
