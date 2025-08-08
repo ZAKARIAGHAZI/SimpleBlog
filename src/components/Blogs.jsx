@@ -19,7 +19,7 @@ const Blogs = () => {
         const localBlogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
 
         // Map local blogs to match API format
-        const formattedLocalBlogs = localBlogs.map((blog, i) => ({
+        const formattedLocalBlogs = localBlogs.map((blog) => ({
           ...blog,
           urlToImage: blog.image,
           description: blog.content,
